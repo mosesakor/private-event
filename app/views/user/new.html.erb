@@ -1,0 +1,8 @@
+<%= bootstrap_form_for(@user) do |f| %>
+  <div class="pt-2 shadow pb-5 mt-5 container col-lg-4 col-md-5">
+    <%= f.text_field :name, class: "text-black bg-light" %>
+    <%= f.submit "Sign Up", class: "color-3 btn btn-block text-white mb-4" %>
+    <p class="account">Already have an account?</p>
+    <%= link_to "Log In", login_path, class: "color-1 btn btn-block text-white" %>
+  </div>
+<% end %>
