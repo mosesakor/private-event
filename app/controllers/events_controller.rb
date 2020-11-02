@@ -3,10 +3,12 @@ class EventsController < ApplicationController
 
   def index
     @event = Event.all
+    @past_events = Event.past
+    @upcoming_events = Event.upcoming
   end
 
   def new
-    @event = Event.new
+    @event = current_user.created_events.new
   end
 
   def create
@@ -23,6 +25,7 @@ class EventsController < ApplicationController
   end
 
   private
+
   def signed_in?
     unless current_user
       redirect_to new_session_path, notice: 'you are not signed in!'
@@ -30,6 +33,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:description, :name)
+    params.require(:event).permit(:description, :date)
   end
 end

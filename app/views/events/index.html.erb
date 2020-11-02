@@ -1,4 +1,19 @@
-<h1> Events </h1>
-<% @event.each do |event| %>
-  <p> <%= event.description %> </p>
-<% end %>
+<% provide(:title, "Events") %>
+
+<h1>Events</h1>
+
+<hr>
+
+<h2>Upcoming</h2>
+
+<ul class="list-group">
+	<%= render @upcoming_events %>
+</ul>
+
+<hr>
+
+<h2>Past</h2>
+
+<ul class="list-group">
+	<%= render @past_events %>
+</ul>

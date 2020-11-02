@@ -3,6 +3,9 @@
 <%= form_for @event do |f| %>
   <%= f.label :description %>
   <%= f.text_area :description %>
-  
-    <%= f.submit "Post" %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+  <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

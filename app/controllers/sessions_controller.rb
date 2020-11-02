@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash.now[:success] = 'You are signed in!'
     else
       flash.now[:danger] = 'Invalid username!'
-      render 'new'            
+      render 'new'
     end
   end
 
