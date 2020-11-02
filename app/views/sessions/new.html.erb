@@ -1,0 +1,8 @@
+<h3>Log in</h3>
+<%= form_for(:session, url: sessions_path) do |f| %>
+  
+  <%= f.text_field :username, class: 'form-control', placeholder: 'Username', :required => true %>
+
+  <%= f.submit "Log in", class: "btn btn-primary" %>
+<% end %>
+<%= link_to "Create New User", new_user_path %>

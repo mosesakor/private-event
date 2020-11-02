@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
 @import "bootstrap";
-@import "rails_bootstrap_form"
+@import "rails_bootstrap_forms";
+@import "font-awesome";
