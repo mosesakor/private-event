@@ -1,4 +1,23 @@
 <div>
+<h1><%= @event.title %></h1>
+
+<p>Created by <%= @event.creator.email%></p>
+
 <%= @event.creator.name%>
+
+<hr>
+
+<p>Location: <%= @event.location %></p>
+
+<p>Time: <%= @event.date.strftime("%I:%M %p, %D")%></p>
+
+<hr>
+
 <p> <%= @event.description%> </p>
+
+<hr>
+
+<h2>Attending</h2>
+
+	
 </div>

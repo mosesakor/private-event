@@ -1,0 +1,33 @@
+@import "bootstrap";
+
+/* Header */
+
+@import "bootstrap";
+@import "rails_bootstrap_forms";
+
+/* Header */
+
+header {
+	background-color: #fada5e;
+	a {
+		color: black;
+	}
+}
+
+/* Footer */
+
+footer {
+	background-color: #ffe5cc;
+	a {
+		color: grey;
+	}
+}
+
+.center {
+	text-align: center;
+	padding-top: 1%;
+}
+
+div {
+  margin-top: 15px;
+}

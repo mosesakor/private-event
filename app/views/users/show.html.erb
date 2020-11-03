@@ -1,21 +1,19 @@
 <div class="col-12">
 <h1>Events</h1>
-<% if @prev_events.size > 0 %>
-<h3>Past Events</h3>
-<ul>
-<% @prev_events.uniq.each do |event|%>
-<li><%= event.description %> | <%= event.date %></li>
-<% end %>
-</ul>
-<% end %>
+<hr>
 
-<% if @upcoming_events.size > 0 %>
-<h3>Upcoming Events</h3>
-<ul>
-<% @upcoming_events.uniq.each do |event|%>
-<li><%= event.description %> | <%= event.date %></li>
-<% end %>
-</ul>
-<% end %>
-<%= link_to "Create a new event", new_event_path, class: "btn btn-primary" %>
-</div>
+<h2>Created Events</h2>
+
+<%= render @user.created_events %>
+
+<hr>
+
+<h2>Upcomming Events</h2>
+
+<%= render @user.attended_events.upcoming_events %>
+
+<hr>
+
+<h2>Attended Events</h2>
+
+<%= render @user.attended_events.past_events %>

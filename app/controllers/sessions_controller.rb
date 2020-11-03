@@ -9,13 +9,14 @@ class SessionsController < ApplicationController
       redirect_to user_path(user.id)
       flash.now[:success] = 'You are signed in!'
     else
-      flash.now[:danger] = 'Invalid username!'
+      flash.now[:danger] = 'Invalid email/password'
       render 'new'
     end
   end
 
   def destroy
     log_out
+    flash[:success] = "Logged out."
     redirect_to root_path
   end
 

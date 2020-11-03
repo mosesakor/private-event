@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root 'static_pages#home'
+
+  get '/about', to: 'static_pages#about'
+
+  get     '/signup',        to: 'users#new'
+  post    '/signup',        to: 'users#create'
+
+  post    '/attend',        to: 'attendances#create'
+  get     '/attend',        to: 'attendances#create'
+  delete  '/unattend',      to: 'attendances#destroy'
+
 
   get '/login', to: 'sessions#new'
   delete '/logout', to: 'sessions#destroy'

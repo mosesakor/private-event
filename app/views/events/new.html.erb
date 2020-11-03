@@ -1,11 +1,7 @@
  
 <h1>Create a new event!</h1>
-<%= form_for @event do |f| %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+<h1>New Event</h1>
 
-  <%= f.label :date %>
-  <%= f.date_field :date %>
+<hr>
 
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form' %>

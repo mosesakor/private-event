@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :signed_in?, only: [:show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def show
     @user = User.find(params[:id])
@@ -16,12 +16,21 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user)
+      log_in @user
       flash[:success] = 'User has been created'
+      redirect_to @user
+
     else
       render 'new'
       flash.now[:danger] = 'User could not be created'
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "This user has been deleted."
+    redirect_to root_path
   end
 
   private
@@ -33,6 +42,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end

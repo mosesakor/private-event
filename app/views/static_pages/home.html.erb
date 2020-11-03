@@ -1,0 +1,9 @@
+<h1>Private-Events</h1>
+
+<hr>
+
+<% if logged_in? %>
+	<%= render 'user_home' %>
+<% else %>
+	<%= render 'guest_home' %>
+<% end %>
